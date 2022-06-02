@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)file:///C:/Users/vrclc/flaskprojects/venv/Scripts/templates/record.html -->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+	* {
+		box-sizing: border-box;
+	}
+	.login-box {
+	height: 25%;
+	width: 35%;
+	border: none;
+	padding: 5px;
+	border-radius: 15px;
+	margin-left: 33%;
+	margin-top: 10%;
+	margin-bottom: 10%;
+	position: relative;
+    background: #FFFAFA;
+	}
+	.login-header{
+	text-align: center;
+	padding-top: 25px;
+	font-family: "Times New Roman (serif)";
+	font-size: 35px;
+	font-weight: bold;
+	background: #FFFAFA;
+	color:#800080;
+	position: relative;
+	}
+	.login-body {
+	padding: 22px;
+	justify-content: center;
+	align-items: center;
+	line-height: 1;
+	}
+	input[type=submit] {
+	background-color: #800080;
+	color: white;
+	text-align: center;
+	font-family: "Times New Roman (serif)";
+	font-size: 18px;
+	font-weight: bold;
+	padding: 5px 50px;
+ 	text-decoration: none;
+	display: inline-block;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	float: center;
+	margin-left: 125px;
+	}
+	.file-selection{
+	padding-left: 50px;
+	}
+	.button1{
+	margin-left: 14px;
+	}
+	textarea {
+ 	width: 100%;
+ 	height: 150px;
+	padding: 12px 20px;
+	box-sizing: border-box;
+ 	border: 2px solid #ccc;
+ 	border-radius: 4px;
+ 	background-color: #f8f8f8;
+	font-size: 16px;
+	text-align: left;
+	}
+	.button1 input[type=submit] {
+	background-color: #E11212;
+	color: white;
+	text-align: center;
+	font-family: "Times New Roman (serif)";
+	font-size: 18px;
+	font-weight: bold;
+	padding: 5px 50px;
+ 	text-decoration: none;
+	display: inline-block;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	float: center;
+	margin-left: 100px;
+	}
+	
+	
+	
+</style>
+	<title>  Prescription  </title>
+</head>
+
+<body style="background-color: #b3cccc;">
+	<div class="login-box">
+		<div class="login-header">Audio Converter</div>
+		<div class="login-body">
+<!--			<form method="post" enctype="multipart/form-data">-->
+				<div class="msg">
+					<form action="/record/" method="POST">
+					<input type="submit" value="Record">
+					</form>
+				</div><br>
+
+
+				<form method="post" enctype="multipart/form-data">
+					<div class="file-selection">
+						<label for="file">Select a file:</label>
+						<input type="file", name="file"/>
+					</div><br>
+					<div class="button1">
+					<input type="submit" id="submitButton" value="Transcribe"/><br><br>
+					</div>
+					<div class="text1">
+                    <textarea type="text" name="text" rows="15" cols="46">
+                        {% if transcript != "" %}
+                        {{ transcript }}
+                        {% endif %}
+                    </textarea>
+					</div>
+				</form>
+			</div>
+<!--			</form>-->
+		</div>
+	</div>
+</body>
+</html>
+
+{{Transcript}}
